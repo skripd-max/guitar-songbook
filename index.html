@@ -15,7 +15,7 @@
 <body>
   <header class="topbar">
     <div><span class="logo">♪</span><strong>Гитарный песенник</strong></div>
-    <button id="newSong" class="primary">＋ Новая песня</button>
+    <button id="newSong" class="primary">＋ Создать вручную</button>
   </header>
   <main>
     <section id="libraryView" class="view active">
@@ -43,14 +43,14 @@
 
   <nav class="tabs"><button data-nav="library" class="active">⌂<span>Библиотека</span></button><button data-nav="import">＋<span>Импорт</span></button><button data-nav="settings">⚙<span>Настройки</span></button></nav>
 
-  <dialog id="editorDialog"><form method="dialog" class="dialog-card"><div class="dialog-head"><h2 id="editorTitle">Песня</h2><button value="cancel" class="icon-button">×</button></div>
+  <dialog id="editorDialog"><form method="dialog" class="dialog-card"><div class="dialog-head"><h2 id="editorTitle">Песня</h2><button id="closeEditor" type="button" class="icon-button" aria-label="Закрыть">×</button></div>
     <div class="form-grid"><label>Название<input id="songTitle" required></label><label>Исполнитель<input id="songArtist"></label><label>Тональность<input id="songKey" placeholder="Am"></label><label>Каподастр<input id="songCapo" type="number" min="0" max="12" value="0"></label></div>
     <label>Текст с аккордами<textarea id="songBody" class="editor" spellcheck="false"></textarea></label>
-    <div class="dialog-actions"><button id="deleteSong" type="button" class="danger">Удалить</button><span></span><button value="cancel" class="secondary">Отмена</button><button id="saveSong" type="button" class="primary">Сохранить</button></div>
+    <div class="dialog-actions"><button id="deleteSong" type="button" class="danger">Удалить</button><span></span><button id="cancelEditor" type="button" class="secondary">Отмена</button><button id="saveSong" type="button" class="primary">Сохранить</button></div>
   </form></dialog>
 
   <dialog id="songDialog"><div class="dialog-card song-card"><div class="dialog-head"><div><h2 id="viewTitle"></h2><p id="viewArtist"></p></div><button id="closeSong" class="icon-button">×</button></div>
-    <div class="song-toolbar"><div class="transpose"><button data-shift="-2">−2</button><button data-shift="-1">−1</button><strong id="currentKey">—</strong><button data-shift="1">＋1</button><button data-shift="2">＋2</button></div><button id="simpleMode" class="secondary">Простые аккорды</button><button id="editSong" class="secondary">Изменить</button><button id="exportChordPro" class="secondary">ChordPro</button><button id="playSong" class="primary">▶ Играть</button></div>
+    <div class="song-toolbar"><div class="transpose"><button data-shift="-2">−2</button><button data-shift="-1">−1</button><strong id="currentKey">—</strong><button data-shift="1">＋1</button><button data-shift="2">＋2</button></div><button id="simpleMode" class="secondary">Простые аккорды</button><button id="editSong" class="secondary">Изменить</button><button id="exportChordPro" class="secondary" title="Скачать песню в формате ChordPro">Скачать .cho</button><button id="playSong" class="primary">▶ Играть</button></div>
     <div id="simpleAdvice" class="advice" hidden></div><div id="songContent" class="song-content"></div>
   </div></dialog>
 
