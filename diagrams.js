@@ -1,0 +1,2 @@
+export const DIAGRAMS={C:'x32010',D:'xx0232',E:'022100',F:'133211',G:'320003',A:'x02220',B:'x24442',Am:'x02210',Bm:'x24432',Cm:'x35543',Dm:'xx0231',Em:'022000',Fm:'133111',Gm:'355333',A7:'x02020',B7:'x21202',C7:'x32310',D7:'xx0212',E7:'020100',G7:'320001',Am7:'x02010',Bm7:'x20202',Dm7:'xx0211',Em7:'020000',Fmaj7:'xx3210',Cmaj7:'x32000',Dsus2:'xx0230',Dsus4:'xx0233',Asus2:'x02200',Asus4:'x02230'};
+export function diagramText(shape){return shape.split('').map((f,i)=>`${['E','A','D','G','B','e'][i]} ${f==='x'?'×':f==='0'?'○':'─'.repeat(+f-1)+'●'}`).join('\n')}
