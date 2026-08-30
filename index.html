@@ -20,8 +20,7 @@
   <main>
     <section id="libraryView" class="view active">
       <div class="section-head"><div><h1>Мои песни</h1><p id="songCount">Личная библиотека на этом устройстве</p></div><input id="search" type="search" placeholder="Найти песню…"></div>
-      <div id="songList" class="song-grid"></div>
-      <div id="emptyState" class="empty"><div class="empty-icon">♫</div><h2>Песен пока нет</h2><p>Импортируйте текст с Ultimate Guitar или AmDm либо создайте песню вручную.</p><button data-nav="import" class="primary">Импортировать песню</button></div>
+      <div class="library-layout"><aside id="artistSidebar" class="artist-sidebar"><h2>Исполнители</h2><div id="artistList"></div></aside><div class="library-results"><div id="songList" class="song-grid"></div><div id="emptyState" class="empty"><div class="empty-icon">♫</div><h2>Песен пока нет</h2><p>Импортируйте текст с Ultimate Guitar или AmDm либо создайте песню вручную.</p><button data-nav="import" class="primary">Импортировать песню</button></div><div id="noResults" class="empty" hidden><h2>Ничего не найдено</h2><p>Попробуйте изменить запрос или выбрать другого исполнителя.</p></div></div></div>
     </section>
 
     <section id="importView" class="view">
@@ -63,6 +62,6 @@
     <footer><button id="slower">Медленнее</button><span id="speedLabel">Скорость 3</span><button id="faster">Быстрее</button></footer>
   </div>
   <div id="toast" class="toast" hidden></div>
-  <script type="module" src="app.js?v=6"></script>
+  <script type="module" src="app.js?v=7"></script>
 </body>
 </html>
