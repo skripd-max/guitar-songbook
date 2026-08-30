@@ -34,7 +34,7 @@
     <section id="settingsView" class="view">
       <div class="narrow"><h1>Настройки</h1>
         <div class="panel"><h2>Мои известные аккорды</h2><p>Через пробел или запятую. Они используются для поиска самой простой транспозиции.</p><textarea id="knownChords" rows="4"></textarea><button id="saveSettings" class="primary">Сохранить</button></div>
-        <div class="panel"><h2>Резервная копия</h2><p>Экспортируйте библиотеку в JSON, чтобы перенести её на другое устройство.</p><div class="actions"><button id="exportJson" class="secondary">Экспорт JSON</button><label class="button secondary">Импорт JSON<input id="importJson" type="file" accept="application/json" hidden></label></div></div>
+        <div class="panel"><h2>Резервная копия</h2><p>Сохраните библиотеку в приложение «Файлы» или iCloud Drive.</p><p id="backupStatus" class="backup-status">Резервная копия ещё не создавалась</p><div class="actions"><button id="exportJson" class="primary">Сохранить копию в Файлы</button><label class="button secondary">Импортировать и объединить<input id="importJson" type="file" accept="application/json" hidden></label></div><p class="hint">При импорте существующие песни сохранятся, а новые добавятся.</p></div>
         <div class="panel"><h2>О приложении</h2><p>Все песни хранятся локально в браузере. Приложение не отправляет их на сервер.</p></div>
       </div>
     </section>
@@ -62,6 +62,6 @@
     <footer><button id="slower">Медленнее</button><span id="speedLabel">Скорость 3</span><button id="faster">Быстрее</button></footer>
   </div>
   <div id="toast" class="toast" hidden></div>
-  <script type="module" src="app.js?v=7"></script>
+  <script type="module" src="app.js?v=9"></script>
 </body>
 </html>
