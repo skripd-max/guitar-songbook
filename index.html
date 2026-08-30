@@ -51,10 +51,17 @@
 
   <dialog id="songDialog"><div class="dialog-card song-card"><div class="dialog-head"><div><h2 id="viewTitle"></h2><p id="viewArtist"></p></div><button id="closeSong" class="icon-button">×</button></div>
     <div class="song-toolbar"><div class="transpose"><button data-shift="-2">−2</button><button data-shift="-1">−1</button><strong id="currentKey">—</strong><button data-shift="1">＋1</button><button data-shift="2">＋2</button></div><button id="simpleMode" class="secondary">Простые аккорды</button><button id="editSong" class="secondary">Изменить</button><button id="exportChordPro" class="secondary">ChordPro</button><button id="playSong" class="primary">▶ Играть</button></div>
-    <div id="simpleAdvice" class="advice" hidden></div><div id="songContent" class="song-content"></div><div id="chordDiagrams" class="diagrams"></div>
+    <div id="simpleAdvice" class="advice" hidden></div><div id="songContent" class="song-content"></div>
   </div></dialog>
 
-  <div id="playMode" class="play-mode" hidden><header><button id="exitPlay">Готово</button><div><strong id="playTitle"></strong><span id="playMeta"></span></div><button id="toggleScroll">▶ Авто</button></header><div id="playContent" class="play-content"></div><footer><button id="slower">Медленнее</button><span id="speedLabel">Скорость 3</span><button id="faster">Быстрее</button></footer></div>
+  <div id="playMode" class="play-mode" hidden><header><button id="exitPlay">Готово</button><div><strong id="playTitle"></strong><span id="playMeta"></span></div></header>
+    <div class="play-layout"><div id="playContent" class="play-content"></div><aside id="chordPanel" class="chord-panel" hidden><div class="panel-title"><span>Аппликатуры</span><button id="closeDiagrams" aria-label="Закрыть аппликатуры">×</button></div><div id="chordDiagrams" class="diagram-grid"></div></aside></div>
+    <div class="play-rail"><button id="openPlaySettings" aria-label="Настройки">⚙</button><button id="toggleMetronome" aria-label="Метроном">♩</button><button id="openTextSettings" aria-label="Настройка текста">Aa</button><button id="toggleScroll" aria-label="Автопрокрутка">▶</button></div>
+    <section id="playSettings" class="play-popover" hidden><div class="panel-title"><span>Настройки</span><button data-close-panel>×</button></div><label class="switch-row"><span>Показывать текст</span><input id="showLyrics" type="checkbox" checked></label><label class="switch-row"><span>Показывать аккорды</span><input id="showChords" type="checkbox" checked></label><label class="switch-row"><span>Аппликатуры справа</span><input id="showDiagrams" type="checkbox"></label></section>
+    <section id="textSettings" class="play-popover compact" hidden><div class="panel-title"><span>Оформление текста</span><button data-close-panel>×</button></div><label>Размер <input id="textSize" type="range" min="20" max="46" value="30"><output id="textSizeValue">30</output></label><label>Интервал <input id="lineSpacing" type="range" min="12" max="22" value="16"><output id="lineSpacingValue">1.6</output></label><label>Колонки <select id="textColumns"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></label></section>
+    <section id="metronomePanel" class="play-popover compact" hidden><div class="panel-title"><span>Метроном</span><button data-close-panel>×</button></div><label>BPM <input id="bpm" type="range" min="40" max="220" value="90"><output id="bpmValue">90</output></label><button id="metronomeStart" class="primary">▶ Запустить</button></section>
+    <footer><button id="slower">Медленнее</button><span id="speedLabel">Скорость 3</span><button id="faster">Быстрее</button></footer>
+  </div>
   <div id="toast" class="toast" hidden></div>
   <script type="module" src="app.js"></script>
 </body>
